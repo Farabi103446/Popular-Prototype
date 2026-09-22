@@ -80,3 +80,6 @@ No blur/glow filters on the map; the HQ pulse and selected-marker ring are plain
 ## Texture & Decoration
 
 None. No rings, blobs, dotted grids, glass, gradient panels. Photography, real numbers, and the grid carry the design.
+
+
+### Changes
