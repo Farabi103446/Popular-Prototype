@@ -1,0 +1,45 @@
+export const LOCATIONS = [
+  {
+    name: "Corporate Head Office",
+    address: "17 Shukrabad, West Panthopath, Dhaka - 1207, Bangladesh",
+    phone: "+88 02 222243097",
+    email: "info@popularbd.com",
+    mapQuery: "17+Shukrabad,+West+Panthopath,+Dhaka+1207",
+    embed:
+      "https://www.google.com/maps?q=23.7509,90.3897&hl=en&z=16&output=embed",
+  },
+  {
+    name: "Manufacturing Factory",
+    address: "Golachipa Barrela, Dhamrai, Dhaka, Bangladesh",
+    phone: "+88 02 222243097",
+    email: "info@popularbd.com",
+    mapQuery: "Dhamrai,+Dhaka,+Bangladesh",
+    embed: "https://www.google.com/maps?q=23.9005,90.1670&hl=en&z=12&output=embed",
+  },
+];
+
+export const DEPOT_CITIES = [
+  "Dhaka",
+  "Chattogram",
+  "Khulna",
+  "Rajshahi",
+  "Sylhet",
+  "Barishal",
+  "Rangpur",
+  "Mymensingh",
+  "Cumilla",
+  "Cox's Bazar",
+  "Bogura",
+  "Jessore",
+  "Dinajpur",
+  "Faridpur",
+  "Tangail",
+  "Pabna",
+  "Noakhali",
+  "Kushtia",
+  "Cox's Bazar Depot",
+  "Rangamati",
+  "Jashore",
+  "Sirajganj",
+  "Gopalganj",
+];

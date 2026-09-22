@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Page background: one flat, faintly green-tinted neutral.
+   No washes, no gradients — decoration stays out of the ground plane.
+   ============================================================ */
+.page-canvas {
+  background-color: hsl(148 16% 98%);
+}
+
+/* ============================================================
+   Popular Pharmaceuticals — shadcn/ui design tokens
+   Brand colors derived from the official logo:
+   - Royal indigo blue  #253795 -> hsl(230 60% 36%)
+   - Popular green, softened for eye comfort: the logo's #009040
+     desaturated and lifted to a calm sage-pine hsl(147 26% 36%)
+   ============================================================ */
+
+@layer base {
+  :root {
+    --background: 210 40% 99%;
+    --foreground: 224 47% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 47% 15%;
+
+    /* Theme swap: soft sage-pine green is the PRIMARY brand color (bands,
+       headings, footer, badges); royal blue moves to tertiary and drives
+       BUTTONS and small accents. */
+    --primary: 147 26% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 152 20% 96%;
+    --secondary-foreground: 147 32% 24%;
+
+    --tertiary: 230 60% 36%;
+    --tertiary-foreground: 0 0% 100%;
+
+    --muted: 210 24% 95%;
+    --muted-foreground: 215 18% 42%;
+
+    --accent: 148 24% 94%;
+    --accent-foreground: 147 30% 24%;
+
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 18% 86%;
+    --input: 150 18% 82%;
+    --ring: 230 60% 36%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 200 45% 7%;
+    --foreground: 210 30% 92%;
+
+    --card: 202 40% 10%;
+    --card-foreground: 210 30% 92%;
+
+    --popover: 202 40% 10%;
+    --popover-foreground: 210 30% 92%;
+
+    --primary: 147 28% 58%;
+    --primary-foreground: 150 40% 8%;
+
+    --secondary: 200 28% 16%;
+    --secondary-foreground: 210 40% 88%;
+
+    --tertiary: 226 65% 68%;
+    --tertiary-foreground: 230 60% 12%;
+
+    --muted: 200 28% 16%;
+    --muted-foreground: 210 18% 62%;
+
+    --accent: 200 32% 18%;
+    --accent-foreground: 210 40% 90%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 28% 20%;
+    --input: 200 28% 24%;
+    --ring: 226 65% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+/* ---------- Legacy utility bridge (existing pages) ---------- */
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 2xl:max-w-[1440px] 3xl:max-w-[1680px];
+  }
+  .section {
+    @apply py-12 sm:py-16 2xl:py-20;
+  }
+  .eyebrow {
+    @apply mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-primary;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply inline-block h-px w-6 bg-primary/50;
+  }
+  .h-section {
+    @apply text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl 2xl:text-4xl;
+  }
+  .prose-copy p {
+    @apply mb-4 max-w-[72ch] leading-relaxed text-muted-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .ken-burns {
+    animation: kenburns 18s ease-out both;
+  }
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out both;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.9s ease-out both;
+  }
+  .animate-slide-down {
+    animation: slideDown 0.25s ease-out both;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ——— Global Operations map animations ——— */
+@keyframes mapArcFlow {
+  0% {
+    stroke-dashoffset: 160;
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.75;
+  }
+  75% {
+    opacity: 0.55;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.12;
+  }
+}
+
+@keyframes mapMarketGlow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes timelineProgress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.map-arc {
+  stroke-dasharray: 6 10;
+  animation: mapArcFlow 3s ease-in-out infinite;
+}
+
+.map-market {
+  animation: mapMarketGlow 0.8s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-arc {
+    animation: none;
+    stroke-dasharray: none;
+    opacity: 0.5;
+  }
+  .map-market {
+    animation: none;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
