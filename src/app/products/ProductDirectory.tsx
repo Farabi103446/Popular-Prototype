@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { Search, Heart, Scale, X, Download, SlidersHorizontal } from "lucide-react";
 import type { Product, TherapeuticClass, DosageForm } from "@/lib/products";
@@ -48,6 +49,8 @@ type SortKey = "brand" | "generic" | "class" | "recent";
 
 export default function ProductDirectory({ products }: { products: Product[] }) {
   const { favorites, toggle: toggleFavorite } = useFavorites();
+  const searchParams = useSearchParams();
+  const classParam = searchParams.get("class");
 
   const [query, setQuery] = useState("");
   const [classes, setClasses] = useState<string[]>([]);
@@ -74,6 +77,14 @@ export default function ProductDirectory({ products }: { products: Product[] }) 
     if (l) setLetter(l.toUpperCase());
     setHydrated(true);
   }, []);
+
+  // React to ?class= changes from the navbar submenu while already on this page
+  // (e.g. clicking "Antibiotics" or "All Products" in the Products dropdown).
+  useEffect(() => {
+    if (!hydrated) return;
+    const c = readParams().get("class");
+    setClasses(c ? c.split(",").filter(Boolean) : []);
+  }, [classParam, hydrated]);
 
   // Sync URL
   useEffect(() => {

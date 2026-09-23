@@ -65,6 +65,8 @@ export default function ProductDetailPage({ params }: Props) {
           { label: "Products", href: "/products" },
           { label: product.brandName },
         ]}
+        image="/images/hero/medicine-shelf.webp"
+        imageAlt="Pharmaceutical bottles, capsules and tablets arranged on a table"
       />
 
       <section className="section" aria-label={`${product.brandName} details`}>

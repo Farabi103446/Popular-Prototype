@@ -14,7 +14,15 @@ export const NAV_LINKS = [
   },
   { href: "/quality-manufacturing", label: "Quality & Manufacturing" },
   { href: "/rd", label: "R&D" },
-  { href: "/media", label: "Media & Investors" },
+  {
+    href: "/media",
+    label: "Media & Investors",
+    children: [
+      { href: "/news", label: "News", description: "Press releases & announcements" },
+      { href: "/virtual-tours", label: "Virtual Tours", description: "360° facilities tour gallery" },
+      { href: "/media", label: "Corporate Videos & Investors", description: "Videos, gallery & IR reports" },
+    ],
+  },
   { href: "/career", label: "Career" },
   { href: "/contact", label: "Contact Us" },
 ] as const;
@@ -43,7 +51,8 @@ export const FOOTER_SITEMAP = [
   {
     title: "Newsroom",
     links: [
-      { href: "/media#press", label: "Press Releases" },
+      { href: "/news", label: "Press Releases" },
+      { href: "/virtual-tours", label: "Virtual Tours" },
       { href: "/media#videos", label: "Corporate Videos" },
       { href: "/media#gallery", label: "Image Gallery" },
       { href: "/media#investors", label: "Investor Relations" },

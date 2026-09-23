@@ -82,7 +82,7 @@ export default function NewsCard({
             featured && "mt-1 text-xl leading-snug 2xl:text-2xl"
           )}
         >
-          <Link href={`/media?news=${item.slug}`}>{item.title}</Link>
+          <Link href={`/news/${item.slug}`}>{item.title}</Link>
         </h3>
         {featured && (
           <time
@@ -105,7 +105,7 @@ export default function NewsCard({
           {item.excerpt}
         </p>
         <Link
-          href={`/media?news=${item.slug}`}
+          href={`/news/${item.slug}`}
           className={cn(
             "inline-flex items-center gap-1.5 text-sm font-semibold text-tertiary transition-colors hover:underline",
             featured ? "mt-5" : "mt-4"

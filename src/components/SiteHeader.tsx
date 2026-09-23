@@ -122,8 +122,8 @@ export default function SiteHeader() {
                     <NavUnderline active={isActive(pathname, link.href)} />
                   </Link>
                   {/* Mega dropdown */}
-                  <div className="invisible absolute left-0 top-full z-50 w-72 translate-y-1 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                    <div className="overflow-hidden rounded-lg border bg-popover p-2 shadow-lg">
+                  <div className="invisible absolute left-0 top-full z-50 w-72 translate-y-1 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                    <div className="overflow-hidden rounded-lg border bg-popover text-popover-foreground p-2 shadow-lg">
                       <p className="px-3 pb-2 pt-1 text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
                         Product Directory
                       </p>
@@ -139,7 +139,7 @@ export default function SiteHeader() {
                           href={child.href}
                           className="block rounded-md px-3 py-2 transition-colors hover:bg-accent"
                         >
-                          <span className="block text-sm font-semibold text-foreground transition-colors group-hover:text-tertiary">
+                          <span className="block text-sm font-semibold text-foreground">
                             {child.label}
                           </span>
                           <span className="block text-xs text-muted-foreground">

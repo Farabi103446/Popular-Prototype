@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { PlayCircle, FileText, Download } from "lucide-react";
-import PageHero from "@/components/PageHero";
-import NewsCard from "@/components/NewsCard";
 import PlaceholderImage from "@/components/PlaceholderImage";
-import { getAllNews } from "@/lib/api";
 import { GALLERY, VIDEOS, REPORTS, FINANCIAL_HIGHLIGHTS } from "@/lib/media";
 import { SITE } from "@/lib/site";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,38 +11,19 @@ import { Separator } from "@/components/ui/separator";
 export const metadata: Metadata = {
   title: "Media & Investors",
   description:
-    "Press releases, corporate videos and image gallery from Popular Pharmaceuticals PLC — plus annual reports, financial highlights and investor relations contact.",
+    "Corporate videos, image gallery and investor relations from Popular Pharmaceuticals PLC — annual reports, financial highlights and IR contact.",
   alternates: { canonical: "/media" },
 };
 
 const GALLERY_VARIANTS = ["accent", "tertiary", "primary", "warm"] as const;
 
 export default function MediaPage() {
-  const news = getAllNews();
-
   return (
     <>
-      <PageHero
-        title="Media & Investors"
-        subtitle="Newsroom and investor relations — press releases, corporate videos, image gallery and financial reporting."
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Media & Investors" }]}
-      />
-
-      {/* Press releases */}
-      <section id="press" className="section scroll-mt-24" aria-label="Press releases">
-        <div className="container-x">
-          <p className="eyebrow">Press Releases</p>
-          <h2 className="h-section">News at Popular Pharmaceuticals</h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:gap-8">
-            {news.map((item) => (
-              <NewsCard key={item.id} item={item} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <h1 className="sr-only">Media &amp; Investors — Corporate Videos and Investor Relations</h1>
 
       {/* Videos */}
-      <section id="videos" className="scroll-mt-24 border-y bg-secondary/60 py-14 sm:py-20" aria-label="Corporate videos">
+      <section id="videos" className="scroll-mt-24 border-b bg-secondary/60 py-14 sm:py-20" aria-label="Corporate videos">
         <div className="container-x">
           <p className="eyebrow">Corporate Videos</p>
           <h2 className="h-section">Popular in motion</h2>

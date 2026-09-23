@@ -163,7 +163,7 @@ export default function HomePage() {
               <h2 className="h-section">Recent stories at Popular</h2>
             </div>
             <Button variant="outline" asChild>
-              <Link href="/media#press">All News</Link>
+              <Link href="/news">All News</Link>
             </Button>
           </div>
           {news.length > 0 && (
