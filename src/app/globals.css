@@ -236,6 +236,51 @@
   animation: mapMarketGlow 0.8s ease-out both;
 }
 
+/* ——— Facilities page animations ——— */
+@keyframes marqueeSlide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.facilities-marquee {
+  animation: marqueeSlide 36s linear infinite;
+}
+
+.facilities-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollCue {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.5;
+  }
+}
+
+.scroll-cue {
+  animation: scrollCue 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .facilities-marquee,
+  .scroll-cue {
+    animation: none;
+  }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .map-arc {
     animation: none;

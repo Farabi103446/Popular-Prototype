@@ -125,7 +125,9 @@ export default function SiteHeader() {
                   <div className="invisible absolute left-0 top-full z-50 w-72 translate-y-1 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
                     <div className="overflow-hidden rounded-lg border bg-popover text-popover-foreground p-2 shadow-lg">
                       <p className="px-3 pb-2 pt-1 text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
-                        Product Directory
+                        {"menuLabel" in link && link.menuLabel
+                          ? (link as { menuLabel: string }).menuLabel
+                          : link.label}
                       </p>
                       {(
                         link.children as readonly {

@@ -4,6 +4,7 @@ export const NAV_LINKS = [
   {
     href: "/products",
     label: "Products",
+    menuLabel: "Product Directory",
     children: [
       { href: "/products", label: "All Products", description: "Search the full directory" },
       { href: "/products?class=Antibiotics", label: "Antibiotics", description: "Anti-infectives range" },
@@ -12,7 +13,15 @@ export const NAV_LINKS = [
       { href: "/products?class=IV", label: "IV Fluids", description: "PP-bag IV solutions" },
     ],
   },
-  { href: "/quality-manufacturing", label: "Quality & Manufacturing" },
+  {
+    href: "/quality-manufacturing",
+    label: "Quality & Manufacturing",
+    menuLabel: "Manufacturing & Facilities",
+    children: [
+      { href: "/quality-manufacturing", label: "Quality & Manufacturing", description: "Quality system & compliance" },
+      { href: "/facilities", label: "Facilities", description: "The nine dedicated blocks at Dhamrai" },
+    ],
+  },
   { href: "/rd", label: "R&D" },
   {
     href: "/media",
@@ -42,7 +51,8 @@ export const FOOTER_SITEMAP = [
     title: "Business",
     links: [
       { href: "/products", label: "Our Products" },
-      { href: "/quality-manufacturing", label: "Facilities" },
+      { href: "/quality-manufacturing", label: "Quality & Manufacturing" },
+      { href: "/facilities", label: "Facilities" },
       { href: "/global-operations", label: "Global Presence" },
       { href: "/rd", label: "Research & Development" },
       { href: "/media", label: "Media & Investors" },
